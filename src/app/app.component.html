@@ -1,0 +1,34 @@
+<p>
+  Simulador Financeiro com Material Angular
+</p>
+
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    routerLink="/home"
+    routerLinkActive
+    #homeTab="routerLinkActive"
+    [active]="homeTab.isActive"
+  >
+    Casa
+  </a>
+  <a
+    mat-tab-link
+    routerLink="/search"
+    routerLinkActive
+    #searchTab="routerLinkActive"
+    [active]="searchTab.isActive"
+    >Carro</a
+  >
+
+  <a
+    mat-tab-link
+    routerLink="/others"
+    routerLinkActive
+    #otherTab="routerLinkActive"
+    [active]="otherTab.isActive"
+    >Outros</a
+  >
+</nav>
+
+<router-outlet></router-outlet>

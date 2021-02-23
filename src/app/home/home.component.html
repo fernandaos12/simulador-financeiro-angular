@@ -1,0 +1,30 @@
+
+<h4 class="text-center">Escolha o valor da simulação do seu imovel: </h4><br>
+   <b class="valores">
+      <h2 class="text-center">{{valores.value | currency:"BRL"  }},00</h2></b>
+    <br>
+    <div class="text-center"><mat-slider #valores (change)="updateSetting($event)" step="5" min="10.0000" max="700.0000" [value]="valores">
+</mat-slider></div>
+<!--boxes-->
+<div class="row">
+  <div class="col-6 align-right text-right">
+    <h5>60 parcelas de: </h5>
+    <p> <b class="valores">
+        <h2>{{valores.value/60 | currency:"BRL"}}0,00</h2><br>
+        </b></p>
+
+        <p>Total com juros: {{calculajuros180() | currency:"BRL"}}0,00 </p>
+        <p>180 Parcelas de : {{calculaparcelas180() | currency:'BRL':'symbol':'0.0-2'}}0,00</p>
+
+    <a href="#" class="btn btn-primary">Fale Conosco</a>
+  </div>
+  <div class="col-6 align-left text-left">
+      <h5>70 parcelas de: </h5>
+        <p> <b class="valores">
+            <h2>{{valores.value/70 | currency:"BRL"}}1,00</h2>
+          </b></p>
+          <p>Total com juros: {{calculajuros240() | currency:"BRL"}}0,00 </p>
+        <p>240 Parcelas de : {{calculaparcelas240() | currency:'BRL':'symbol':'.1-3'}}0,00 </p>
+        <a href="#" class="btn btn-primary">Fale Conosco</a>
+      </div>
+   </div>
